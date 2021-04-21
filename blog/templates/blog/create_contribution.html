@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <h1>create contribution</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form | crispy}}
+        <input class="btn btn-info" type="submit" value="Add contributer">
+    </form>
+  
+{% endblock content %}
+

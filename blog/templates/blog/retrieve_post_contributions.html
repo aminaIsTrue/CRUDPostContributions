@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+
+
+
+{% block content %}
+  
+<h1>  Contributors  </h1>
+    {% for contrib  in contribs  %}
+      
+    <div class="card border-info mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{contrib.post}}</h5>
+          <p class="card-text">{{contrib.user}} is the {{contrib.contribution}}</p>
+          <a href="{% url 'updatePostContributions_view-path' contrib.pk %}" class="btn btn-primary">Update Contributer</a>
+          <a href="{% url 'deletePostContribution_view-path' contrib.pk %}" class="btn btn-primary">Delete Contributer</a>
+        </div>
+      </div>
+    {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+
+
+
+{% block content %}
+
+    <h1>Are you sure you want to delete ??</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        
+        <input type="submit" value="Delete" class="btn btn-danger">
+        <a href="{% url 'retrievePostContributions_View-path' post.pk %}" class="btn btn-info">retourn to list </a>
+
+    </form>
+  
+{% endblock content %}
+

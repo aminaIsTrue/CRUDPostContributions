@@ -1,0 +1,22 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+
+    {% for post in posts  %}
+
+
+        <div class="card border-info mb-3">
+            <div class="card-body">
+              <h5 class="card-title">{{post.title}}</h5>
+              <p class="card-text">{{post.content}}</p>
+              <a href="{% url 'detail_view-path' post.pk %}" class="btn btn-primary">More</a>
+              <a href="{% url 'retrievePostContributions_View-path' post.pk %}" class="btn btn-success">See Post Contributers</a>
+              
+            </div>
+          </div>
+
+
+    {% endfor %}
+  
+{% endblock  %}
